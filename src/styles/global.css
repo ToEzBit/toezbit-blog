@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+/* 
+Usage Suggestions:
+Primary Color (#0CF2ED) → Links, buttons, hover effects, icons.
+Background (#001F30) → Main website background.
+Text Colors (#E0FBFC, #A8DADC) → Use for content readability.
+Secondary & Accent Colors (#023047, #0A9396) → Sidebar, headers, navigation bar.
+Border/Line (#264653) → Separators, dividers.
+Success/Warning/Error → Alerts, notifications, badges.
+
+*/
+
+@theme {
+  /* Bright Cyan - for highlights, links, and buttons */
+  --color-primary: #0cf2ed;
+  /* Deep Navy Blue - for the main background */
+  --color-background: #001f30;
+  /* Dark Blue-Green - for secondary elements like sidebars, headers */
+  --color-secondary: #023047;
+  /* Teal - for subtle highlights, hover effects */
+  --color-accent: #0a9396;
+  /* Light Cyan - for readable text on dark background */
+  --color-text-primary: #e0fbfc;
+  /* Muted Cyan - for less important text like descriptions */
+  --color-text-secondary: #a8dadc;
+  /* Vibrant Greenish-Teal - for positive messages, alerts */
+  --color-success: #2ec4b6;
+  /* Soft Yellow - for warnings, attention-grabbing elements */
+  --color-warning: #e9c46a;
+  Strong Red - for errors, alerts
+  --color-error: #e63946;
+  /* Muted Dark Teal - for subtle borders and dividers */
+  --color-muted :#264653
+}
