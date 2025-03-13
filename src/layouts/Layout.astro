@@ -12,7 +12,7 @@ import Header from "../components/Header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
   </head>
-  <body>
+  <body class="bg-background">
     <Header />
     <slot />
   </body>
@@ -24,5 +24,7 @@ import Header from "../components/Header.astro";
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family: "NerdFont", sans-serif;
+    font-weight: 400;
   }
 </style>
