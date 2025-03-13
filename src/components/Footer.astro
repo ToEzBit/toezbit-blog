@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-secondary flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <div
+      class="bg-primary w-fit pl-2 pr-4"
+      style="clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 0% 100%);"
+    >
+      <p class="text-secondary font-bold">NORMAL</p>
+    </div>
+    <div class="flex gap-2 items-center text-text-primary">
+      <Icon name="git-branch" />
+      <p>toezbit-main</p>
+    </div>
+    <div class="flex gap-2 items-center text-text-primary">
+      <p>[No Name]</p>
+      <p>[-]</p>
+    </div>
+  </div>
+  <div class="flex gap-4">
+    <div class="flex items-center text-warning gap-2">
+      <Icon name="box" />
+      <p>4</p>
+      <Icon name="chevron-compact-left" class="text-text-primary" />
+    </div>
+    <div class="flex items-center text-text-primary gap-2">
+      <Icon name="linux" />
+
+      <Icon name="chevron-compact-left" class="text-text-primary" />
+    </div>
+    <div class="flex items-center text-text-primary gap-2">
+      <Icon name="menu" />
+      <p>sigma</p>
+      <Icon name="chevron-compact-left" class="text-text-primary" />
+      <p>88%</p>
+    </div>
+    <div
+      class="bg-primary w-fit pl-4 pr-2"
+      style="clip-path: polygon(10% 0%, 100% 0, 100% 100%, 10% 100%, 0% 50%);"
+    >
+      <p class="text-secondary font-bold">88:88</p>
+    </div>
+  </div>
+</footer>

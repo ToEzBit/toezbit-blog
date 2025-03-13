@@ -1,0 +1,78 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="grid place-items-center mt-18">
+  <pre
+    class="text-primary">                                       
+        ████████╗ ██████╗ ███████╗███████╗██████╗ ██╗████████╗ 
+        ╚══██╔══╝██╔═══██╗██╔════╝╚══███╔╝██╔══██╗██║╚══██╔══╝ 
+           ██║   ██║   ██║█████╗    ███╔╝ ██████╔╝██║   ██║    
+           ██║   ██║   ██║██╔══╝   ███╔╝  ██╔══██╗██║   ██║    
+           ██║   ╚██████╔╝███████╗███████╗██████╔╝██║   ██║    
+           ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═════╝ ╚═╝   ╚═╝    
+                                                          
+    </pre>
+  <div class="w-1/2 flex flex-col gap-8">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="file" />
+        <p>{">"}</p>
+        <p>New File</p>
+      </div>
+      <div class="text-success">
+        <p>e</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="folder" />
+        <p>{">"}</p>
+        <p>Toggle file explorer</p>
+      </div>
+      <div class="text-success">
+        <p>SPC ee</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="file-sad" />
+        <p>{">"}</p>
+        <p>Find File</p>
+      </div>
+      <div class="text-success">
+        <p>SPC ff</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="search" />
+        <p>{">"}</p>
+        <p>Find Word</p>
+      </div>
+      <div class="text-success">
+        <p>SPC fs</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="restore" />
+        <p>{">"}</p>
+        <p>Restore Session For Current Directory</p>
+      </div>
+      <div class="text-success">
+        <p>SPC wr</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-4 text-text-primary">
+        <Icon name="quit" />
+        <p>{">"}</p>
+        <p>Quit NVIM</p>
+      </div>
+      <div class="text-success">
+        <p>q</p>
+      </div>
+    </div>
+  </div>
+</div>

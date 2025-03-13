@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -12,9 +13,12 @@ import Header from "../components/Header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
   </head>
-  <body class="bg-background">
-    <Header />
-    <slot />
+  <body class="bg-background flex flex-col">
+    <!-- <Header /> -->
+    <div class="flex-1">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
 
