@@ -27,19 +27,7 @@
   font-weight: 700;
   font-style: normal;
 }
-
-/* 
-Usage Suggestions:
-Primary Color (#0CF2ED) → Links, buttons, hover effects, icons.
-Background (#001F30) → Main website background.
-Text Colors (#E0FBFC, #A8DADC) → Use for content readability.
-Secondary & Accent Colors (#023047, #0A9396) → Sidebar, headers, navigation bar.
-Border/Line (#264653) → Separators, dividers.
-Success/Warning/Error → Alerts, notifications, badges.
-
-*/
-
-@theme {
+:root {
   /* Bright Cyan - for highlights, links, and buttons */
   --color-primary: #0cf2ed;
   /* Deep Navy Blue - for the main background */
@@ -60,4 +48,28 @@ Success/Warning/Error → Alerts, notifications, badges.
   --color-error: #e63946;
   /* Muted Dark Teal - for subtle borders and dividers */
   --color-muted: #264653;
+}
+
+/* 
+Usage Suggestions:
+Primary Color (#0CF2ED) → Links, buttons, hover effects, icons.
+Background (#001F30) → Main website background.
+Text Colors (#E0FBFC, #A8DADC) → Use for content readability.
+Secondary & Accent Colors (#023047, #0A9396) → Sidebar, headers, navigation bar.
+Border/Line (#264653) → Separators, dividers.
+Success/Warning/Error → Alerts, notifications, badges.
+
+*/
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-background: var(--color-background);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-muted: var(--color-muted);
 }

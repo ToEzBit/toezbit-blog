@@ -5,20 +5,20 @@ pubDate: "Jul 01 2022"
 heroImage: "/blog-placeholder-1.jpg"
 ---
 
-# H1 kuy i sas i here
+# Yo this is my first blog useEffect
 
 ```ts
 const [state, setState] = useState("");
 ```
 
-# H1 kuy i sas i here
-
 ```ts
 useEffect(() => {
   const fetch = (async = () => {
-    const res = await fetch("/kuy");
+    const res = await fetch("/kako");
     console.log(res.data.payload);
   });
   fetch();
 }, []);
 ```
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aspernatur, alias libero facilis hic eius placeat, suscipit dignissimos officia repellendus corporis a sequi consequuntur eligendi harum fuga eveniet earum? Blanditiis.

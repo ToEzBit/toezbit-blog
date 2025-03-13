@@ -1,0 +1,26 @@
+pre {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  background-color: var(--color-secondary) !important;
+}
+pre > code {
+  all: unset;
+}
+pre,
+code {
+  font-family: "NerdFontMono", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6s {
+  color: var(--color-primary);
+}
+
+#blog-post-content p {
+  color: var(--color-text-primary);
+}
