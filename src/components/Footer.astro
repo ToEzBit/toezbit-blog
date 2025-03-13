@@ -1,18 +1,27 @@
 ---
 import { Icon } from "astro-icon/components";
+import { cn } from "../lib/cn";
+
+const isHomePage = Astro.url.pathname === "/";
+const path = Astro.url.pathname;
+
+const splitPath = path.split("/");
+const blogName = splitPath[splitPath.length - 1];
 ---
 
 <footer class="bg-secondary flex items-center justify-between">
   <div class="flex items-center gap-4">
     <div
-      class="bg-primary w-fit pl-2 pr-4"
+      class={cn("bg-primary w-fit pl-2 pr-4", !isHomePage && "bg-warning")}
       style="clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 0% 100%);"
     >
-      <p class="text-secondary font-bold">NORMAL</p>
+      <p class="text-secondary font-bold">
+        {isHomePage ? "NORMAL" : "INSERT"}
+      </p>
     </div>
     <div class="flex gap-2 items-center text-text-primary">
       <Icon name="git-branch" />
-      <p>toezbit-main</p>
+      <p>{isHomePage ? "toezbit - main" : blogName}</p>
     </div>
     <div class="flex gap-2 items-center text-text-primary">
       <p>[No Name]</p>
