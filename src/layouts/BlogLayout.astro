@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import "../styles/blog.css";
 import Footer from "../components/Footer.astro";
+import LeftSidebar from "../components/LeftSidebar.astro";
+import RightSidebar from "../components/RightSidebar.astro";
 ---
 
 <!doctype html>
@@ -14,8 +16,12 @@ import Footer from "../components/Footer.astro";
     <title>ToEzBit Blog</title>
   </head>
   <body class="bg-background flex flex-col">
-    <div class="flex-1">
-      <slot />
+    <div class="flex flex-1">
+      <LeftSidebar />
+      <div class="flex-1">
+        <slot />
+      </div>
+      <RightSidebar />
     </div>
     <Footer />
   </body>

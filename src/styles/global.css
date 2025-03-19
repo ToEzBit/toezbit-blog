@@ -72,4 +72,6 @@ Success/Warning/Error → Alerts, notifications, badges.
   --color-warning: var(--color-warning);
   --color-error: var(--color-error);
   --color-muted: var(--color-muted);
+  --color-menu-label: #597f99;
+  --color-menu-icon: #0cf2ed;
 }
