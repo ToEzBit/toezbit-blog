@@ -27,7 +27,7 @@ const currentBlog = splitPath[splitPath.length - 1];
     <p class="text-menu-icon">&nbsp;blog</p>
   </div>
   {
-    posts.map((el) => {
+    posts.map((el, idx) => {
       return (
         <a href={`/blog/${el.slug}`}>
           <div
@@ -36,7 +36,7 @@ const currentBlog = splitPath[splitPath.length - 1];
               el.slug === currentBlog && "bg-accent"
             )}
           >
-            <p class="text-menu-label">3&nbsp;</p>
+            <p class="text-menu-label">{idx + 4}&nbsp;</p>
             <p class="text-menu-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <span>
               <Icon name="file-type-tsx" class="text-menu-icon" />
