@@ -41,7 +41,14 @@ const currentBlog = splitPath[splitPath.length - 1];
             <span>
               <Icon name="file-type-tsx" class="text-menu-icon" />
             </span>
-            <p class="text-menu-icon">&nbsp;{el.id}</p>
+            <p
+              class={cn(
+                "text-menu-icon",
+                el.slug === currentBlog && "bg-accent"
+              )}
+            >
+              &nbsp;{el.id}
+            </p>
           </div>
         </a>
       );
