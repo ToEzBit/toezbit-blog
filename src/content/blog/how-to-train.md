@@ -1,24 +1,21 @@
 ---
-title: "Markdown Style Guide"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jul 01 2022"
-heroImage: "/blog-placeholder-1.jpg"
+title: "Routing in Astro"
+description: "Learn about Astro's file-based routing system."
 ---
 
-# how-to-train-your-dragon
+# Overview
 
-```ts
-const [state, setState] = useState("");
-```
+Astro uses file-based routing...
 
-```ts
-useEffect(() => {
-  const fetch = (async = () => {
-    const res = await fetch("/kuy");
-    console.log(res.data.payload);
-  });
-  fetch();
-}, []);
-```
+## Navigating between pages
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aspernatur, alias libero facilis hic eius placeat, suscipit dignissimos officia repellendus corporis a sequi consequuntur eligendi harum fuga eveniet earum? Blanditiis.
+Use `<a>` elements to navigate between pages.
+
+## Static routes
+
+Astro supports both static and dynamic routes...
+
+## Dynamic routes
+
+Static (SSG) Mode
+Server (SSR) Mode

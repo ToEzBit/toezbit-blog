@@ -4,6 +4,8 @@ import "../styles/blog.css";
 import Footer from "../components/Footer.astro";
 import LeftSidebar from "../components/LeftSidebar.astro";
 import RightSidebar from "../components/RightSidebar.astro";
+
+const { headings } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,12 +18,12 @@ import RightSidebar from "../components/RightSidebar.astro";
     <title>ToEzBit Blog</title>
   </head>
   <body class="bg-background flex flex-col">
-    <div class="flex flex-1">
+    <div class="flex flex-1 overflow-hidden">
       <LeftSidebar />
-      <div class="flex-1">
+      <div class="flex-1 overflow-y-auto max-h-screen">
         <slot />
       </div>
-      <RightSidebar />
+      <RightSidebar headings={headings} />
     </div>
     <Footer />
   </body>

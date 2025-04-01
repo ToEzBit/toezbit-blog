@@ -1,7 +1,26 @@
 ---
+import { cn } from "../lib/cn";
 
+type Headings = { depth: number; slug: string; text: string };
+
+const { headings } = Astro.props;
+
+const validHeadings = headings.filter((el: Headings) => el.depth === 2);
 ---
 
-<menu>
-  <p class="text-red-400">this is my Right sidebar</p>
+<menu class="bg-secondary p-4 w-60 overflow-x-scroll">
+  {
+    validHeadings.map((el: Headings, idx: number) => {
+      return (
+        <a
+          href={`#${el.slug}`}
+          class={cn("flex items-center cursor-pointer hover:bg-accent")}
+        >
+          <p class="text-menu-label">{idx}&nbsp;</p>
+          <p class="text-menu-label">&nbsp;</p>
+          <p class={cn("text-menu-icon  hover:bg-accent")}>&nbsp;{el.text}</p>
+        </a>
+      );
+    })
+  }
 </menu>
