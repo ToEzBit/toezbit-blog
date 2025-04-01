@@ -18,10 +18,10 @@ import { Icon } from "astro-icon/components";
       <div class="flex items-center gap-4 text-text-primary">
         <Icon name="file" />
         <p>{">"}</p>
-        <p>New File</p>
+        <p>Go to blog</p>
       </div>
       <div class="text-success">
-        <p>e</p>
+        <p>gb</p>
       </div>
     </div>
     <div class="flex items-center justify-between">
@@ -68,11 +68,33 @@ import { Icon } from "astro-icon/components";
       <div class="flex items-center gap-4 text-text-primary">
         <Icon name="quit" />
         <p>{">"}</p>
-        <p>Quit NVIM</p>
+        <p>Quit Blog</p>
       </div>
       <div class="text-success">
-        <p>q</p>
+        <p>qb</p>
       </div>
     </div>
   </div>
 </div>
+
+<script is:inline>
+  let keyPress = "";
+  let timeoutId;
+
+  window?.addEventListener("keydown", (e) => {
+    keyPress += e.key.toLowerCase();
+    console.log(keyPress);
+
+    if (keyPress === "gb") {
+      window.location.href = "/blog";
+    }
+
+    if (keyPress === "qb") {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      keyPress = "";
+    }, 2000);
+  });
+</script>

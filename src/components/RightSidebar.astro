@@ -5,7 +5,7 @@ type Headings = { depth: number; slug: string; text: string };
 
 const { headings } = Astro.props;
 
-const validHeadings = headings.filter((el: Headings) => el.depth === 2);
+const validHeadings = headings?.filter((el: Headings) => el.depth === 2) ?? [];
 ---
 
 <menu class="bg-secondary p-4 w-60 overflow-x-scroll">
