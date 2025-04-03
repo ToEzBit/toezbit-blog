@@ -11,8 +11,7 @@ pre,
 code {
   font-family: "NerdFontMono", sans-serif;
 }
-
-h1,
+#blog-post-content h1,
 h2,
 h3,
 h4,
@@ -21,6 +20,29 @@ h6s {
   color: var(--color-primary);
 }
 
-#blog-post-content p {
+#blog-post-content h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+#blog-post-content h2 {
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+}
+
+#blog-post-content p,
+li,
+table {
   color: var(--color-text-primary);
+}
+
+#blog-post-content table {
+  width: 100%;
+}
+
+#blog-post-content th,
+td {
+  padding: 8px;
+  border: solid;
+  border-color: var(--color-muted);
 }

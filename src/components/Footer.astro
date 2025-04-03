@@ -68,6 +68,9 @@ const blogName = splitPath[splitPath.length - 1];
     if (shortcut === ":q") {
       window.location.href = "/";
     }
+    if (shortcut === ":help") {
+      window.location.href = "/blog/help";
+    }
   };
 
   const onHandleShowCommandText = (text: string) => {
