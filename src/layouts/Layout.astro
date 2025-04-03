@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import LeftSidebar from "../components/LeftSidebar.astro";
 ---
 
 <!doctype html>
@@ -11,10 +12,14 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
+    <script src="/src/lib/toggle-sidebar.ts" defer></script>
   </head>
   <body class="bg-background flex flex-col">
-    <div class="flex-1">
-      <slot />
+    <div class="flex flex-1 overflow-hidden">
+      <LeftSidebar defaultOpen={false} />
+      <div class="flex-1 overflow-y-auto max-h-screen">
+        <slot />
+      </div>
     </div>
     <Footer />
   </body>

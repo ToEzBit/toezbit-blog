@@ -130,3 +130,24 @@ const blogName = splitPath[splitPath.length - 1];
     onHandleShowCommandText(keyPress);
   });
 </script>
+
+<script is:inline>
+  const leftSideBar = document.getElementById("leftSidebar");
+
+  let keyPress = "";
+  let timeoutId;
+
+  window?.addEventListener("keydown", (e) => {
+    keyPress += e.key.toLowerCase();
+
+    if (keyPress === " ee") {
+      onToggleSidebar(leftSideBar);
+      keyPress = "";
+    }
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      keyPress = "";
+    }, 1000);
+  });
+</script>

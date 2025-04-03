@@ -82,9 +82,7 @@ import { Icon } from "astro-icon/components";
   let timeoutId;
 
   window?.addEventListener("keydown", (e) => {
-    console.log(e.key);
     keyPress += e.key.toLowerCase();
-    console.log(keyPress);
 
     if (keyPress === "gb") {
       window.location.href = "/blog";
@@ -97,6 +95,13 @@ import { Icon } from "astro-icon/components";
     if (keyPress === " hh") {
       window.location.href = "/blog/help";
     }
+
+    if (keyPress === " ee") {
+      const leftSideBar = document.getElementById("leftSidebar");
+      onToggleSidebar(leftSideBar);
+      keyPress = "";
+    }
+
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       keyPress = "";

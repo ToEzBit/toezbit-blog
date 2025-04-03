@@ -16,10 +16,11 @@ const { headings } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
+    <script src="/src/lib/toggle-sidebar.ts" defer></script>
   </head>
   <body class="bg-background flex flex-col">
     <div class="flex flex-1 overflow-hidden">
-      <LeftSidebar />
+      <LeftSidebar defaultOpen={true} />
       <div class="flex-1 overflow-y-auto max-h-screen">
         <slot />
       </div>

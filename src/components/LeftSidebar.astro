@@ -1,7 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import { cn } from "../lib/cn";
+
+const { defaultOpen } = Astro.props;
 
 const posts = await getCollection("blog");
 
@@ -9,7 +11,13 @@ const splitPath = Astro.url.pathname.split("/");
 const currentBlog = splitPath[splitPath.length - 1];
 ---
 
-<nav class="bg-[#023047] p-4 w-60 overflow-x-scroll whitespace-nowrap">
+<nav
+  id="leftSidebar"
+  class={cn(
+    "bg-[#023047] p-4 w-60 overflow-x-scroll whitespace-nowrap",
+    defaultOpen ? "block" : "hidden"
+  )}
+>
   <nav class="flex items-center">
     <p class="text-menu-label">0</p>
     <p class="text-menu-icon">&nbsp;~/toezbit.dev</p>
