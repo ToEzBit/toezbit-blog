@@ -13,9 +13,10 @@ const currentBlog = splitPath[splitPath.length - 1];
 
 <nav
   id="leftSidebar"
+  style={{ display: defaultOpen ? "block" : "none" }}
   class={cn(
-    "bg-secondary sm:w-60  p-4 w-20 overflow-x-scroll whitespace-nowrap",
-    defaultOpen ? "block" : "hidden"
+    "bg-secondary sm:w-60  p-4 w-20 overflow-x-scroll whitespace-nowrap"
+    // defaultOpen ? "block" : "hidden"
   )}
 >
   <nav class="flex items-center">

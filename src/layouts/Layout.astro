@@ -12,7 +12,6 @@ import LeftSidebar from "../components/LeftSidebar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
-    <script src="/src/lib/toggle-sidebar.js" defer></script>
   </head>
   <body class="bg-background flex flex-col">
     <div class="flex flex-1 overflow-hidden">
@@ -35,3 +34,37 @@ import LeftSidebar from "../components/LeftSidebar.astro";
     font-weight: 400;
   }
 </style>
+
+<script is:inline src="/toggle-sidebar.js"></script>
+
+<script is:inline>
+  let keyPress = "";
+  let timeoutId;
+
+  window?.addEventListener("keydown", (e) => {
+    keyPress += e.key.toLowerCase();
+
+    if (keyPress === "gb") {
+      window.location.href = "/blog";
+    }
+
+    if (keyPress === "qb") {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+
+    if (keyPress === " hh") {
+      window.location.href = "/blog/help";
+    }
+
+    if (keyPress === " ee") {
+      const leftSideBar = document.getElementById("leftSidebar");
+      onToggleSidebar(leftSideBar);
+      keyPress = "";
+    }
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      keyPress = "";
+    }, 1000);
+  });
+</script>

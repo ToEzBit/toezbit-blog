@@ -16,7 +16,6 @@ const { headings } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>ToEzBit Blog</title>
-    <script src="/src/lib/toggle-sidebar.js" defer></script>
   </head>
   <body class="bg-background flex flex-col">
     <div class="flex flex-1 overflow-hidden">
@@ -40,3 +39,101 @@ const { headings } = Astro.props;
     font-weight: 400;
   }
 </style>
+
+<script is:inline src="/toggle-sidebar.js"></script>
+
+<script>
+  let keyPress = "";
+  let isCommandMode = false;
+  const rootStyles = getComputedStyle(document.documentElement);
+
+  const warningColor = rootStyles.getPropertyValue("--color-warning").trim();
+  const successColor = rootStyles.getPropertyValue("--color-success").trim();
+
+  const onHandleCommand = (shortcut: string) => {
+    if (shortcut === ":q") {
+      window.location.href = "/";
+    }
+    if (shortcut === ":help") {
+      window.location.href = "/blog/help";
+    }
+  };
+
+  const onHandleShowCommandText = (text: string) => {
+    const display = document.getElementById("keyPressDisplay");
+    if (display) {
+      display.textContent = text;
+    }
+  };
+
+  const onHandleStatusBar = (text: string, color: string) => {
+    const statusCommandBar = document.getElementById("statusCommandBar");
+    const statusCommandBarText = document.getElementById(
+      "statusCommandBarText"
+    );
+
+    if (statusCommandBar && statusCommandBarText) {
+      statusCommandBar.style.backgroundColor = color;
+      statusCommandBarText.textContent = text;
+    }
+  };
+
+  window?.addEventListener("keydown", (e) => {
+    if (e.key === "Shift") return;
+    if (e.key === ":") {
+      isCommandMode = true;
+
+      onHandleStatusBar("COMMAND", warningColor);
+    }
+
+    if (!isCommandMode) return;
+
+    if (e.key === "Backspace") {
+      if (keyPress.length > 1) {
+        const updatedKeyPress = keyPress.slice(0, -1);
+        keyPress = updatedKeyPress;
+        onHandleShowCommandText(keyPress);
+      }
+      return;
+    }
+    if (e.key === "Enter") {
+      onHandleCommand(keyPress);
+      keyPress = "";
+      onHandleShowCommandText(keyPress);
+      onHandleStatusBar("INSERT", successColor);
+      return;
+    }
+
+    if (e.key === "Escape") {
+      isCommandMode = false;
+      keyPress = "";
+      onHandleShowCommandText("[No Name]");
+      onHandleStatusBar("INSERT", successColor);
+      return;
+    }
+
+    keyPress += e.key.toLowerCase();
+    onHandleShowCommandText(keyPress);
+  });
+</script>
+
+<script is:inline>
+  const leftSideBar = document.getElementById("leftSidebar");
+
+  let keyPress = "";
+  let timeoutId;
+
+  window?.addEventListener("keydown", (e) => {
+    keyPress += e.key.toLowerCase();
+
+    if (keyPress === " ee") {
+      onToggleSidebar(leftSideBar);
+      keyPress = "";
+    }
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      keyPress = "";
+    }, 1000);
+  });
+</script>
