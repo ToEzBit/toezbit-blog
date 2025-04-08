@@ -1,4 +1,4 @@
-const onToggleSidebar = (leftSideBarHtmlElement: HTMLElement) => {
+const onToggleSidebar = (leftSideBarHtmlElement) => {
   if (leftSideBarHtmlElement.style.display === "none") {
     leftSideBarHtmlElement.style.display = "block";
   } else {
